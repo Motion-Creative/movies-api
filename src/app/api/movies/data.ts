@@ -548,9 +548,7 @@ export function generateMovieSummary(movieId: number): {
   
   const year = new Date(movie.releaseDate).getFullYear();
   
-  const summary = movie.overview.length > 100 
-    ? `${movie.overview.substring(0, 100)}...` 
-    : movie.overview;
+  const summary = movie.overview;
   
   const keypoints = [
     `Directed by ${movie.director}`,
