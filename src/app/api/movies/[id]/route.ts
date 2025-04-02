@@ -3,22 +3,23 @@ import { getMovieById } from '../data';
 
 export async function GET(
   request: NextRequest,
-  { params }: { params: { id: string } }
+  { params }: { params: Promise<{ id: string }> }
 ) {
-  const id = parseInt(params.id, 10);
+  const { id } = await params;
+  const idNum = parseInt(id, 10);
   
-  if (isNaN(id)) {
+  if (isNaN(idNum)) {
     return NextResponse.json(
       { error: 'Invalid movie ID. Please provide a valid numeric ID.' },
       { status: 400 }
     );
   }
 
-  const movie = getMovieById(id);
+  const movie = getMovieById(idNum);
   
   if (!movie) {
     return NextResponse.json(
-      { error: `Movie with ID ${id} not found.` },
+      { error: `Movie with ID ${idNum} not found.` },
       { status: 404 }
     );
   }

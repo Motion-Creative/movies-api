@@ -49,7 +49,6 @@ Returns a paginated list of movies.
       "id": 1,
       "title": "The Shawshank Redemption",
       "tagline": "Fear can hold you prisoner. Hope can set you free.",
-      "overview": "Framed in the 1940s for the double murder of his wife and her lover...",
       "releaseDate": "1994-09-23",
       "posterPath": "/q6y0Go1tsGEsmtFryDOJo3dEmqu.jpg",
       "backdropPath": "/kXfqcdQKsToO0OUXHcrrNCHDBzO.jpg",
