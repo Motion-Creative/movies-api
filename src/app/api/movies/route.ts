@@ -1,31 +1,9 @@
 import { NextRequest, NextResponse } from 'next/server';
-import { getPaginatedMovies, getMovieById } from './data';
+import { getPaginatedMovies } from './data';
 
 export async function GET(request: NextRequest) {
   const searchParams = request.nextUrl.searchParams;
-  const id = searchParams.get('id');
   
-  // If id is provided, return a single movie
-  if (id) {
-    const movieId = parseInt(id, 10);
-    if (isNaN(movieId)) {
-      return NextResponse.json(
-        { error: 'Invalid movie ID. Please provide a valid numeric ID.' },
-        { status: 400 }
-      );
-    }
-
-    const movie = getMovieById(movieId);
-    if (!movie) {
-      return NextResponse.json(
-        { error: `Movie with ID ${movieId} not found.` },
-        { status: 404 }
-      );
-    }
-
-    return NextResponse.json({ data: movie });
-  }
-
   // Handle pagination
   const pageParam = searchParams.get('page');
   const pageSizeParam = searchParams.get('pageSize');
@@ -62,9 +40,27 @@ export async function GET(request: NextRequest) {
   // Get paginated movies
   const result = getPaginatedMovies(page, pageSize);
 
+  // Create a new array of movies without overview field
+  const moviesWithoutSummary = result.movies.map(movie => ({
+    id: movie.id,
+    title: movie.title,
+    tagline: movie.tagline,
+    releaseDate: movie.releaseDate,
+    posterPath: movie.posterPath,
+    backdropPath: movie.backdropPath,
+    runtime: movie.runtime,
+    budget: movie.budget,
+    revenue: movie.revenue,
+    rating: movie.rating,
+    voteCount: movie.voteCount,
+    director: movie.director,
+    cast: movie.cast,
+    language: movie.language,
+  }));
+
   // Return the response with proper pagination metadata
   return NextResponse.json({
-    data: result.movies,
+    data: moviesWithoutSummary,
     pagination: {
       totalCount: result.totalCount,
       totalPages: result.totalPages,

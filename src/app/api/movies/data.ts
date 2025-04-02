@@ -9,50 +9,11 @@ export interface Movie {
   runtime: number;
   budget: number;
   revenue: number;
-  genres: string[];
   rating: number;
   voteCount: number;
   director: string;
   cast: string[];
   language: string;
-  keywords?: string[];
-  mood?: string[];
-  similarMovies?: number[];
-  themes?: string[];
-  ageRating?: string;
-  awards?: string[];
-  criticScore?: number;
-  audienceScore?: number;
-  streamingPlatforms?: string[];
-}
-
-export enum MovieTheme {
-  COMING_OF_AGE = "Coming of Age",
-  REDEMPTION = "Redemption",
-  SURVIVAL = "Survival",
-  REVENGE = "Revenge",
-  LOVE = "Love",
-  FAMILY = "Family",
-  POWER = "Power",
-  IDENTITY = "Identity",
-  JUSTICE = "Justice",
-  MORALITY = "Morality",
-  TECHNOLOGY = "Technology",
-  FRIENDSHIP = "Friendship",
-  HEROISM = "Heroism"
-}
-
-export enum MovieMood {
-  DARK = "Dark",
-  UPLIFTING = "Uplifting",
-  TENSE = "Tense",
-  FUNNY = "Funny",
-  ROMANTIC = "Romantic",
-  THRILLING = "Thrilling",
-  NOSTALGIC = "Nostalgic",
-  INSPIRING = "Inspiring",
-  DISTURBING = "Disturbing",
-  MELANCHOLIC = "Melancholic"
 }
 
 export const movies: Movie[] = [
@@ -67,7 +28,6 @@ export const movies: Movie[] = [
     runtime: 142,
     budget: 25000000,
     revenue: 28341469,
-    genres: ["Drama", "Crime"],
     rating: 8.7,
     voteCount: 23456,
     director: "Frank Darabont",
@@ -85,7 +45,6 @@ export const movies: Movie[] = [
     runtime: 175,
     budget: 6000000,
     revenue: 245066411,
-    genres: ["Drama", "Crime"],
     rating: 8.7,
     voteCount: 18034,
     director: "Francis Ford Coppola",
@@ -103,7 +62,6 @@ export const movies: Movie[] = [
     runtime: 152,
     budget: 185000000,
     revenue: 1004558444,
-    genres: ["Drama", "Action", "Crime", "Thriller"],
     rating: 8.5,
     voteCount: 29901,
     director: "Christopher Nolan",
@@ -121,7 +79,6 @@ export const movies: Movie[] = [
     runtime: 154,
     budget: 8000000,
     revenue: 213928762,
-    genres: ["Thriller", "Crime"],
     rating: 8.5,
     voteCount: 24654,
     director: "Quentin Tarantino",
@@ -139,7 +96,6 @@ export const movies: Movie[] = [
     runtime: 195,
     budget: 22000000,
     revenue: 321365567,
-    genres: ["Drama", "History", "War"],
     rating: 8.6,
     voteCount: 14324,
     director: "Steven Spielberg",
@@ -157,7 +113,6 @@ export const movies: Movie[] = [
     runtime: 148,
     budget: 160000000,
     revenue: 836836967,
-    genres: ["Action", "Science Fiction", "Adventure"],
     rating: 8.3,
     voteCount: 32012,
     director: "Christopher Nolan",
@@ -175,7 +130,6 @@ export const movies: Movie[] = [
     runtime: 132,
     budget: 11400000,
     revenue: 258670626,
-    genres: ["Comedy", "Thriller", "Drama"],
     rating: 8.5,
     voteCount: 15721,
     director: "Bong Joon-ho",
@@ -193,7 +147,6 @@ export const movies: Movie[] = [
     runtime: 201,
     budget: 94000000,
     revenue: 1142456987,
-    genres: ["Adventure", "Fantasy", "Action"],
     rating: 8.5,
     voteCount: 21108,
     director: "Peter Jackson",
@@ -211,7 +164,6 @@ export const movies: Movie[] = [
     runtime: 169,
     budget: 165000000,
     revenue: 701729206,
-    genres: ["Adventure", "Drama", "Science Fiction"],
     rating: 8.3,
     voteCount: 29215,
     director: "Christopher Nolan",
@@ -229,7 +181,6 @@ export const movies: Movie[] = [
     runtime: 136,
     budget: 63000000,
     revenue: 463517383,
-    genres: ["Action", "Science Fiction"],
     rating: 8.2,
     voteCount: 22631,
     director: "Lana Wachowski",
@@ -247,7 +198,6 @@ export const movies: Movie[] = [
     runtime: 125,
     budget: 19000000,
     revenue: 383397782,
-    genres: ["Animation", "Family", "Fantasy"],
     rating: 8.5,
     voteCount: 13658,
     director: "Hayao Miyazaki",
@@ -265,7 +215,6 @@ export const movies: Movie[] = [
     runtime: 145,
     budget: 25000000,
     revenue: 46836394,
-    genres: ["Drama", "Crime"],
     rating: 8.5,
     voteCount: 10929,
     director: "Martin Scorsese",
@@ -283,7 +232,6 @@ export const movies: Movie[] = [
     runtime: 105,
     budget: 3300000,
     revenue: 49000000,
-    genres: ["Drama", "Music"],
     rating: 8.4,
     voteCount: 12950,
     director: "Damien Chazelle",
@@ -301,7 +249,6 @@ export const movies: Movie[] = [
     runtime: 118,
     budget: 19000000,
     revenue: 272742922,
-    genres: ["Crime", "Drama", "Thriller"],
     rating: 8.3,
     voteCount: 14082,
     director: "Jonathan Demme",
@@ -312,14 +259,13 @@ export const movies: Movie[] = [
     id: 15,
     title: "Seven Samurai",
     tagline: "The Mighty Warriors Who Became the Seven National Heroes of a Small Town",
-    overview: "A samurai answers a village's request for protection after he falls on hard times. The town needs protection from bandits, so the samurai gathers six others to help him teach the people how to defend themselves, and the villagers provide the soldiers with food. Set in 16th century Japan during a period of civil war, the film begins when a village of farmers learns that bandits plan to raid them after their harvest. In desperation, the village elder suggests hiring samurai for protection. A group of farmers is sent to find willing warriors who will work for nothing but food. After several rejections, they encounter Kambei, an aging but wise samurai who agrees to help. Impressed by Kambei's compassion and strategic mind, six other samurai of varying temperaments and skills join the cause, including the enthusiastic but untested Katsushiro and the brash, quick-tempered Kikuchiyo—who is later revealed to be a farmer's son posing as a samurai. Upon reaching the village, the samurai find the farmers hostile and fearful, harboring resentment toward the warrior class from past experiences. The samurai begin training the villagers in combat techniques while fortifying the village against attack. As they prepare, conflicts arise between the classes, particularly when Katsushiro falls in love with a farmer's daughter, and when Kikuchiyo reveals the farmers have previously killed samurai and taken their belongings. During their preparations, the samurai discover forty-two bandits will attack—nearly overwhelming odds despite their strategic advantages. When the bandits finally attack, the resulting series of battles tests the courage and skill of both the samurai and villagers, leading to victory but at a tremendous cost. Akira Kurosawa's masterpiece explores themes of honor, social class, sacrifice, and community through spectacular battle sequences and intimate character moments, establishing storytelling conventions that would influence countless films across many genres.",
+    overview: "A samurai answers a village's request for protection after he falls on hard times. The town needs protection from bandits, so the samurai gathers six others to help him teach the people how to defend themselves, and the villagers provide the soldiers with food. Set in 16th century Japan during a period of civil war, the film begins when a village of farmers learns that bandits plan to raid them after their harvest. In desperation, the village elder suggests hiring samurai for protection. A group of farmers is sent to find willing warriors who will work for nothing but food. After several rejections, they encounter Kambei, an aging but wise samurai who agrees to help. Impressed by Kambei's compassion and strategic mind, six other samurai of varying temperaments and skills join the cause, including the enthusiastic but untested Katsushiro and the brash, quick-tempered Kikuchiyo—who is later revealed to be a farmer's son posing as a samurai. Upon reaching the village, the samurai find the farmers hostile and fearful, harboring resentment toward the warrior class from past experiences. The samurai begin training the villagers in combat techniques while fortifying the village against attack. As they prepare, conflicts arise between the classes, particularly when Katsushiro falls in love with a farmer's daughter, and when Kikuchiyo reveals the farmers have previously killed samurai and taken their belongings. During their preparations, the samurai discover forty-two bandits will attack—nearly overwhelming odds despite their strategic advantages. When the bandits finally attack, the resulting series of battles tests the courage and skill of both the samurai and villagers, leading to victory but at a tremendous cost. Akira Kurosawa's masterpiece explores themes of honor, social class, sacrifice, and community through spectacular battle sequences and intimate character moments, establishing storytelling conventions that would influence countless films across many .",
     releaseDate: "1954-04-26",
     posterPath: "/8OKmBV5BUFzmozIC3pPWKHy17kx.jpg",
     backdropPath: "/sJNNMCc6B7KZIY3LH3JMYJJNH5j.jpg",
     runtime: 207,
     budget: 500000,
     revenue: 2800000,
-    genres: ["Action", "Drama"],
     rating: 8.6,
     voteCount: 3176,
     director: "Akira Kurosawa",
@@ -337,7 +283,6 @@ export const movies: Movie[] = [
     runtime: 130,
     budget: 3300000,
     revenue: 30600000,
-    genres: ["Drama", "Crime"],
     rating: 8.5,
     voteCount: 9340,
     director: "Fernando Meirelles",
@@ -355,7 +300,6 @@ export const movies: Movie[] = [
     runtime: 116,
     budget: 20000000,
     revenue: 230700000,
-    genres: ["Comedy", "Drama"],
     rating: 8.5,
     voteCount: 11615,
     director: "Roberto Benigni",
@@ -373,7 +317,6 @@ export const movies: Movie[] = [
     runtime: 155,
     budget: 103000000,
     revenue: 460583960,
-    genres: ["Action", "Drama", "Adventure"],
     rating: 8.2,
     voteCount: 15612,
     director: "Ridley Scott",
@@ -391,7 +334,6 @@ export const movies: Movie[] = [
     runtime: 189,
     budget: 60000000,
     revenue: 286801374,
-    genres: ["Fantasy", "Drama", "Crime"],
     rating: 8.5,
     voteCount: 14999,
     director: "Frank Darabont",
@@ -409,7 +351,6 @@ export const movies: Movie[] = [
     runtime: 151,
     budget: 90000000,
     revenue: 291465034,
-    genres: ["Drama", "Thriller", "Crime"],
     rating: 8.2,
     voteCount: 12958,
     director: "Martin Scorsese",
@@ -427,7 +368,6 @@ export const movies: Movie[] = [
     runtime: 166,
     budget: 190000000,
     revenue: 711828700,
-    genres: ["Science Fiction", "Adventure"],
     rating: 8.4,
     voteCount: 3529,
     director: "Denis Villeneuve",
@@ -445,7 +385,6 @@ export const movies: Movie[] = [
     runtime: 181,
     budget: 100000000,
     revenue: 976000000,
-    genres: ["Drama", "History", "Thriller"],
     rating: 8.1,
     voteCount: 6721,
     director: "Christopher Nolan",
@@ -463,7 +402,6 @@ export const movies: Movie[] = [
     runtime: 130,
     budget: 40000000,
     revenue: 109676311,
-    genres: ["Drama", "Mystery", "Thriller"],
     rating: 8.2,
     voteCount: 13978,
     director: "Christopher Nolan",
@@ -481,7 +419,6 @@ export const movies: Movie[] = [
     runtime: 88,
     budget: 45000000,
     revenue: 968511805,
-    genres: ["Animation", "Family", "Drama"],
     rating: 8.3,
     voteCount: 15473,
     director: "Roger Allers",
@@ -499,7 +436,6 @@ export const movies: Movie[] = [
     runtime: 102,
     budget: 950000,
     revenue: 3700000,
-    genres: ["Romance", "Drama", "War"],
     rating: 8.2,
     voteCount: 5112,
     director: "Michael Curtiz",
@@ -535,310 +471,4 @@ export function getPaginatedMovies(page: number = 1, pageSize: number = 50): {
     pageSize
   };
 }
-
-export function generateMovieSummary(movieId: number): { 
-  title: string; 
-  summary: string; 
-  keypoints: string[];
-  yearReleased: number;
-  director: string;
-} | undefined {
-  const movie = getMovieById(movieId);
-  if (!movie) return undefined;
-  
-  const year = new Date(movie.releaseDate).getFullYear();
-  
-  const summary = movie.overview;
-  
-  const keypoints = [
-    `Directed by ${movie.director}`,
-    `${movie.runtime} minutes runtime`,
-    `${movie.genres.join(", ")} genres`,
-    `${year} release`,
-    `${movie.rating}/10 rating from ${movie.voteCount} votes`
-  ];
-  
-  return {
-    title: movie.title,
-    summary,
-    keypoints,
-    yearReleased: year,
-    director: movie.director
-  };
-}
-
-export function classifyMovie(movieId: number): {
-  primaryGenre: string;
-  secondaryGenres: string[];
-  themes: string[];
-  mood: string[];
-  targetAudience: string;
-  era: string;
-} | undefined {
-  const movie = getMovieById(movieId);
-  if (!movie) return undefined;
-  
-  const year = new Date(movie.releaseDate).getFullYear();
-  let era = "";
-  
-  if (year < 1950) era = "Classic";
-  else if (year < 1980) era = "New Hollywood";
-  else if (year < 2000) era = "Modern";
-  else if (year < 2010) era = "Early Digital";
-  else era = "Contemporary";
-  
-  const mood = [];
-  if (movie.genres.includes("Horror") || movie.genres.includes("Thriller")) mood.push(MovieMood.TENSE, MovieMood.DARK);
-  if (movie.genres.includes("Comedy")) mood.push(MovieMood.FUNNY);
-  if (movie.genres.includes("Romance")) mood.push(MovieMood.ROMANTIC);
-  if (movie.genres.includes("Drama") && movie.rating > 8) mood.push(MovieMood.INSPIRING);
-  if (movie.genres.includes("Action")) mood.push(MovieMood.THRILLING);
-  
-  const themes = [];
-  const overview = movie.overview.toLowerCase();
-  
-  if (overview.includes("family") || overview.includes("father") || overview.includes("mother") || overview.includes("son") || overview.includes("daughter")) 
-    themes.push(MovieTheme.FAMILY);
-  if (overview.includes("love") || overview.includes("relationship")) 
-    themes.push(MovieTheme.LOVE);
-  if (overview.includes("crime") || overview.includes("law") || overview.includes("police")) 
-    themes.push(MovieTheme.JUSTICE);
-  if (overview.includes("death") || overview.includes("kill") || overview.includes("murder")) 
-    themes.push(MovieTheme.SURVIVAL);
-  if (overview.includes("hero") || overview.includes("save")) 
-    themes.push(MovieTheme.HEROISM);
-  
-  if (themes.length === 0) themes.push(MovieTheme.IDENTITY);
-  
-  return {
-    primaryGenre: movie.genres[0] || "Unknown",
-    secondaryGenres: movie.genres.slice(1),
-    themes,
-    mood,
-    targetAudience: movie.rating > 8.5 ? "Broad appeal" : "Genre enthusiasts",
-    era
-  };
-}
-
-export function getRecommendedMovies(preferences: {
-  favoriteGenres?: string[];
-  favoriteTitles?: string[];
-  favoriteActors?: string[];
-  preferredLanguage?: string;
-  minimumRating?: number;
-  releaseYearRange?: [number, number];
-  excludedGenres?: string[];
-  maxRuntime?: number;
-}): Movie[] {
-  const allMovies = getAllMovies();
-  
-  let filteredMovies = allMovies;
-  
-  if (preferences.favoriteGenres && preferences.favoriteGenres.length > 0) {
-    filteredMovies = filteredMovies.filter(movie => 
-      movie.genres.some(genre => preferences.favoriteGenres?.includes(genre))
-    );
-  }
-  
-  if (preferences.favoriteTitles && preferences.favoriteTitles.length > 0) {
-    const favoriteMovieIds = filteredMovies
-      .filter(movie => preferences.favoriteTitles?.includes(movie.title))
-      .map(movie => movie.id);
-    
-    if (favoriteMovieIds.length > 0) {
-      const favoriteMovies = favoriteMovieIds.map(id => getMovieById(id)).filter(m => m) as Movie[];
-      const favoriteGenres = [...new Set(favoriteMovies.flatMap(m => m.genres))];
-      
-      filteredMovies = filteredMovies.filter(movie => 
-        favoriteGenres.some(genre => movie.genres.includes(genre)) || 
-        favoriteMovieIds.includes(movie.id)
-      );
-    }
-  }
-  
-  if (preferences.favoriteActors && preferences.favoriteActors.length > 0) {
-    filteredMovies = filteredMovies.filter(movie => 
-      movie.cast.some(actor => preferences.favoriteActors?.includes(actor))
-    );
-  }
-  
-  if (preferences.preferredLanguage) {
-    filteredMovies = filteredMovies.filter(movie => 
-      movie.language === preferences.preferredLanguage
-    );
-  }
-  
-  if (preferences.minimumRating) {
-    filteredMovies = filteredMovies.filter(movie => 
-      movie.rating >= (preferences.minimumRating || 0)
-    );
-  }
-  
-  if (preferences.releaseYearRange) {
-    const [minYear, maxYear] = preferences.releaseYearRange;
-    filteredMovies = filteredMovies.filter(movie => {
-      const year = new Date(movie.releaseDate).getFullYear();
-      return year >= minYear && year <= maxYear;
-    });
-  }
-  
-  if (preferences.excludedGenres && preferences.excludedGenres.length > 0) {
-    filteredMovies = filteredMovies.filter(movie => 
-      !movie.genres.some(genre => preferences.excludedGenres?.includes(genre))
-    );
-  }
-  
-  if (preferences.maxRuntime) {
-    filteredMovies = filteredMovies.filter(movie => 
-      movie.runtime <= (preferences.maxRuntime || Infinity)
-    );
-  }
-  
-  return filteredMovies.sort((a, b) => b.rating - a.rating);
-}
-
-export function analyzeMovieTrends(movieIds: number[]): {
-  commonGenres: { genre: string; count: number }[];
-  averageRating: number;
-  ratingDistribution: { [key: string]: number };
-  decadeDistribution: { [key: string]: number };
-  commonCast: { actor: string; appearances: number }[];
-  commonDirectors: { director: string; movies: number }[];
-} {
-  const movies = movieIds.map(id => getMovieById(id)).filter(m => m) as Movie[];
-  
-  if (movies.length === 0) {
-    return {
-      commonGenres: [],
-      averageRating: 0,
-      ratingDistribution: {},
-      decadeDistribution: {},
-      commonCast: [],
-      commonDirectors: []
-    };
-  }
-  
-  const genreCounts: Record<string, number> = {};
-  movies.forEach(movie => {
-    movie.genres.forEach(genre => {
-      genreCounts[genre] = (genreCounts[genre] || 0) + 1;
-    });
-  });
-  
-  const commonGenres = Object.entries(genreCounts)
-    .map(([genre, count]) => ({ genre, count }))
-    .sort((a, b) => b.count - a.count);
-  
-  const totalRating = movies.reduce((sum, movie) => sum + movie.rating, 0);
-  const averageRating = movies.length > 0 ? totalRating / movies.length : 0;
-  
-  const ratingDistribution: Record<string, number> = {};
-  movies.forEach(movie => {
-    const ratingKey = Math.floor(movie.rating).toString();
-    ratingDistribution[ratingKey] = (ratingDistribution[ratingKey] || 0) + 1;
-  });
-  
-  const decadeDistribution: Record<string, number> = {};
-  movies.forEach(movie => {
-    const year = new Date(movie.releaseDate).getFullYear();
-    const decade = `${Math.floor(year / 10) * 10}s`;
-    decadeDistribution[decade] = (decadeDistribution[decade] || 0) + 1;
-  });
-  
-  const castCounts: Record<string, number> = {};
-  movies.forEach(movie => {
-    movie.cast.forEach(actor => {
-      castCounts[actor] = (castCounts[actor] || 0) + 1;
-    });
-  });
-  
-  const commonCast = Object.entries(castCounts)
-    .map(([actor, appearances]) => ({ actor, appearances }))
-    .sort((a, b) => b.appearances - a.appearances)
-    .slice(0, 10);
-  
-  const directorCounts: Record<string, number> = {};
-  movies.forEach(movie => {
-    directorCounts[movie.director] = (directorCounts[movie.director] || 0) + 1;
-  });
-  
-  const commonDirectors = Object.entries(directorCounts)
-    .map(([director, movies]) => ({ director, movies }))
-    .sort((a, b) => b.movies - a.movies)
-    .slice(0, 5);
-  
-  return {
-    commonGenres,
-    averageRating,
-    ratingDistribution,
-    decadeDistribution,
-    commonCast,
-    commonDirectors
-  };
-}
-
-export function explainMovieSimilarity(movieId1: number, movieId2: number): {
-  similarities: string[];
-  differences: string[];
-  similarityScore: number;
-} | undefined {
-  const movie1 = getMovieById(movieId1);
-  const movie2 = getMovieById(movieId2);
-  
-  if (!movie1 || !movie2) return undefined;
-  
-  const similarities: string[] = [];
-  const differences: string[] = [];
-  
-  const commonGenres = movie1.genres.filter(genre => movie2.genres.includes(genre));
-  if (commonGenres.length > 0) {
-    similarities.push(`Both movies share the ${commonGenres.join(", ")} genre${commonGenres.length > 1 ? 's' : ''}`);
-  } else {
-    differences.push(`The movies have completely different genres: ${movie1.title} (${movie1.genres.join(", ")}) vs ${movie2.title} (${movie2.genres.join(", ")})`);
-  }
-  
-  if (movie1.director === movie2.director) {
-    similarities.push(`Both directed by ${movie1.director}`);
-  } else {
-    differences.push(`Directed by different filmmakers: ${movie1.director} vs ${movie2.director}`);
-  }
-  
-  const commonCast = movie1.cast.filter(actor => movie2.cast.includes(actor));
-  if (commonCast.length > 0) {
-    similarities.push(`Share cast members: ${commonCast.join(", ")}`);
-  } else {
-    differences.push("Have completely different casts");
-  }
-  
-  const year1 = new Date(movie1.releaseDate).getFullYear();
-  const year2 = new Date(movie2.releaseDate).getFullYear();
-  const yearDiff = Math.abs(year1 - year2);
-  
-  if (yearDiff < 5) {
-    similarities.push(`Released in close proximity (${year1} and ${year2})`);
-  } else {
-    differences.push(`Released ${yearDiff} years apart (${year1} and ${year2})`);
-  }
-  
-  const ratingDiff = Math.abs(movie1.rating - movie2.rating);
-  if (ratingDiff < 0.5) {
-    similarities.push(`Similar audience ratings (${movie1.rating} and ${movie2.rating})`);
-  } else if (ratingDiff > 2) {
-    differences.push(`Significant rating difference: ${movie1.title} (${movie1.rating}) vs ${movie2.title} (${movie2.rating})`);
-  }
-  
-  let similarityScore = 0;
-  similarityScore += commonGenres.length * 0.2;
-  similarityScore += (movie1.director === movie2.director ? 0.2 : 0);
-  similarityScore += commonCast.length * 0.1;
-  similarityScore += (yearDiff < 5 ? 0.1 : 0);
-  similarityScore += (ratingDiff < 1 ? 0.1 : 0);
-  
-  similarityScore = Math.min(similarityScore, 1.0);
-  
-  return {
-    similarities,
-    differences,
-    similarityScore
-  };
-} 
+ 
